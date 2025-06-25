@@ -66,10 +66,9 @@
 							<li><a href="index.html">Home</a></li>
 							<li><a href="vector.html">Vector</a></li>
 							<li><a href="choropleth.html">Choropleth</a></li>
-							<li><a href="landuse.html">Land Cover</a></li>
+							<li><a href="lcc.html">Land Cover</a></li>
 							<li><a href="DEM.html">DEM</a></li>
 							<li><a href="gee.html">Carbon Sequestration</a></li>
-							<li><a href="about.html">About</a></li>
 						</ul>
 					</nav>
 
@@ -86,7 +85,7 @@
 					
 					<!-- UPDATE - add your leaflet code here! I already added the necessary headers - make sure you move your js file into the root directory too -->
 							<div id='map'></div>
-<script type="text/javascript" src="mapdata.js"></script>
+<script type="text/javascript" src="MAPONLINE/mapdata.js"></script>
 <script type="text/javascript">
 
 	const map = L.map('map').setView([10, 10], 2);
@@ -111,7 +110,16 @@
 		// change class breaks and color depending on your values //UPDATE for our own legend - use colorbrewer.org for ideas for colors
 		//UPDATE legend to match the classes you coded - and the source of your data needs to reference the correct link
 	info.update = function (props) {
-		const contents = props ? `<b>${props.nam_en}</b><br />${props.safe_wat_7} % of total safely managed sanitation services` : 'Hover over a state';
+		let contents = 'Hover over a state';
+if (props) {
+  contents = `<b>${props.nam_en}</b><br/>`;
+  if (props.safe_wat_7) {
+    contents = contents + `${props.safe_wat_7}% of population use managed sanitation services`;
+  }
+  else  {
+    contents = contents + `No information`;
+  }
+}
 		this._div.innerHTML = `<h4>6.2.1 Proportion of population using safely managed sanitation services</h4>${contents}`;
 	};
 
@@ -137,7 +145,7 @@
 			color: 'white',
 			dashArray: '3',
 			fillOpacity: 0.7,
-			fillColor: getColor(feature.properties.whole2)
+			fillColor: getColor(feature.properties.safe_wat_7)
 		};
 	}
 
@@ -220,9 +228,8 @@
 								<h2>Follow</h2>
 								<ul class="icons">
 									
-									<li><a href="https://github.com/bricker0" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="https://www.linkedin.com/in/brittaricker/" class="icon brands style2 fa-linkedin"><span class="label">500px</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+									<li><a href="https://github.com/zoekpapadpl" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="mailto:z.o.z.papadopoulou@students.uu.nl" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
 								</ul>
 							</section>
 							<ul class="copyright">

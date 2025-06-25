@@ -6,7 +6,7 @@
 -->
 <html>
 	<head>
-		<title>Britta Ricker</title>
+		<title>Digital Elevation Model</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
@@ -22,7 +22,7 @@
 
 							<!-- Logo -->
 								<a href="index.html" class="logo">
-									<span class="symbol"><img src="images/logo.svg" alt="" /></span><span class="title">Britta Ricker</span>
+									<span class="symbol"><img src="images/UUlogo.png" alt="" /></span><span class="title">Universiteit Utrecht</span>
 								</a>
 
 							<!-- Nav -->
@@ -38,14 +38,14 @@
 				<!-- Menu -->
 					<nav id="menu">
 						<h2>Menu</h2>
+						h2>Menu</h2>
 						<ul>
 							<li><a href="index.html">Home</a></li>
 							<li><a href="vector.html">Vector</a></li>
 							<li><a href="choropleth.html">Choropleth</a></li>
-							<li><a href="landuse.html">Land Cover</a></li>
+							<li><a href="lcc.html">Land Cover</a></li>
 							<li><a href="DEM.html">DEM</a></li>
 							<li><a href="gee.html">Carbon Sequestration</a></li>
-							<li><a href="about.html">About</a></li>
 						</ul>
 					</nav>
 
@@ -53,8 +53,45 @@
 					<div id="main">
 						<div class="inner">
 							<h1>Digital Elevation Models</h1>
-							<span class="image main"><img src="images/linge_red_blue.png" alt="" /></span>
-														<p>I made this map following a lab assignment. include relevant information from your assignment here.</p>
+							<p>The objective of this assignment was to compare an old map to a modern Digital Elevation Model (DEM). My region of interest (ROI) for this assignment is a bend in the Maas river, west of Nijmegen and northwest of 
+Limburg. More specifically, my ROI is area in which the Maas river passes between Alphen and 
+Oijen. I selected this region because I found the shape of the bend in the river fascinating and I 
+felt that it would make for an interesting map. I also liked that the river is fairly wide in this area, 
+which would make it stand out much more on the map than a more narrow stream for example. I 
+felt that this specific region was appropriate in terms of area for the purpose of this assignment.</br></br>The old map that I selected was made in the year of 1748. It is titled
+“Carte particuliere d'une partie du Brabant Hollandois, du Gueldre et de Cleves, ou les environs 
+de Grave, Ravestein, Helmont, Nimégue, Fort de Schenk, Cleves, Gennip, Emmerick &c.”. The 
+portion of the map that I utilized is located in the upper left corner. The cartographer was Johannes Condet (1711-1781). There does not seem to be any information about who the commissioner was. In the university library notes, it is stated that the map was hand-drawn and that inundationareas were colored by Capt. Engineer J. van Westenhout (signed at the bottom of the right sheet). It is also the fourth part of a mounted four-part map, pasted on linen with a total size of 44 x 220 cm. The map is available on OldMapsOnline or via <a href=" https://objects.library.uu.nl/reader/index.php?obj=1874-349754&lan=en">this link.</a></br></br>The data that was used to create the DEM was obtained from GeoTiles. The DTM, DSM, and RGB 1/2 meter data was downloaded for four tiles. This data was then imported into QGIS to create the DTM, DSM, and RGB models.</p>
+							<span class="image main"><img src="images/DTM_FINALPRINT.png" alt="" /></span>
+														<p><i>Fig 1: DTM print with DSM shadow layer overlay.</i></br></p>
+<p>In addition to the print I created, I also made three different maps with the old map overlayed on top.</br></br>
+	My DTM (fig. 2) uses a purple/pink to yellow color gradient to represent the elevation 
+levels of the terrain. I wanted the contrast to be intense so that the differences in values did not 
+go unnoticed. I also wanted to use a color gradient that could also be more accessible to a red-
+green colorblind audience. For my DTM, I also used a DSM shadow layer to add 
+shadow details where buildings or other surface elements may exist.</br></br>
+My DSM (fig. 3) uses a blue/green to yellow color gradient to represent the elevation 
+levels of the surface. I chose this color gradient because the green and blue hues felt 
+appropriate for the symbolization of surface elements such as trees and other greenness. 
+Although green and yellow hues are usually difficult to distinguish for an observer with red-green 
+colorblindness, I tried to adjust the minimum and maximum values so that the contrast would 
+be intense enough to not go unnoticed.</br></br>
+Finally, for my RGB map (fig. 4) I also experimented with a DSM shadow layer overlay, which I 
+initially expected to make more of a visible difference. However, in the end it seemed that it 
+didn’t, so I did not use the shadow layer overlay.</br></br> 
+What I find most interesting about all my maps with the old map overlay is that the bend 
+of the river does not match up perfectly. This could be due to a number of reasons. My 
+georeferencing and point matching may have been off, or the old map may have simply been 
+inaccurate. Or, perhaps the land morphology could’ve changed in the nearly 300 years between 
+the dates of the maps.</p></br>
+<span class="image main"><img src="images/DTMoverlay.png" alt="" /></span>
+<p><i>Fig 2: DTM with old map overlay.</i></br></br></p>
+<span class="image main"><img src="images/DSMoverlay.png" alt="" /></span>
+<p><i>Fig 3: DSM with old map overlay.</i></br></br></p>
+<span class="image main"><img src="images/RGBoverlay.png" alt="" /></span>
+<p><i>Fig 4: RGB with old map overlay.</i></br></br></p>
+
+
 						
 						</div>
 					</div>
@@ -67,13 +104,12 @@
 								<h2>Follow</h2>
 								<ul class="icons">
 									
-									<li><a href="https://github.com/bricker0" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
-									<li><a href="https://www.linkedin.com/in/brittaricker/" class="icon brands style2 fa-linkedin"><span class="label">500px</span></a></li>
-									<li><a href="#" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+									<li><a href="https://github.com/zoekpapadpl" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="mailto:z.o.z.papadopoulou@students.uu.nl" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
 								</ul>
 							</section>
 							<ul class="copyright">
-								<li>&copy; Britta Ricker. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								<li>&copy; Zoe Papadopoulou. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
 							</ul>
 						</div>
 					</footer>

@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Land Cover Classification</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+					<header id="header">
+						<div class="inner">
+
+							<!-- Logo -->
+								<a href="index.html" class="logo">
+									<span class="symbol"><img src="images/UUlogo.png" alt="" /></span><span class="title">Universiteit Utrecht</span>
+								</a>
+
+							<!-- Nav -->
+								<nav>
+									<ul>
+										<li><a href="#menu">Menu</a></li>
+									</ul>
+								</nav>
+
+						</div>
+					</header>
+
+				<!-- Menu -->
+					<nav id="menu">
+						<h2>Menu</h2>
+						<ul>
+							<li><a href="index.html">Home</a></li>
+							<li><a href="vector.html">Vector</a></li>
+							<li><a href="choropleth.html">Choropleth</a></li>
+							<li><a href="lcc.html">Land Cover</a></li>
+							<li><a href="DEM.html">DEM</a></li>
+							<li><a href="gee.html">Carbon Sequestration</a></li>
+						</ul>
+					</nav>
+
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+							<h1>Land Cover Classification</h1>
+							<span class="image main"><img src="images/linge_red_blue.png" alt="" /></span>
+														<p>Land cover or land use classification is the process of categorizing different types of surfaces. Common classes for this type of classification are urban areas, forests, barren lands, water bodies, and more. To make my maps, I used satelitte imaging of an area of interest which was opened in ArcGIS Pro. For this assignment, the region of interest (ROI) that I chose is my hometown, the suburb of Kifissia in northern Athens, Greece. I ran several different models, which are described below.</br></br><b>Unsupervised pixel-based classification</b></br>The machine's algorithm automatically groups pixels into classes based on their spectral characteristics without any required predefined training data. This classification scheme shows the difference between mildly green areas and more green areas (fig. 1). In this case, the biggest weakness is the low precision (which is most likely caused by the quality of the satellite image that was available for my ROI). It is hard to say whether points are correctly classified. However, this might just be due to the nature of the highly urban ROI that I picked.</br></br><b>Unsupervised object-based classification</b></br>The machine's algorithm groups similar pixels into objects (segments) based on their spectral and spatial characteristics. It then classifies these objects into categories without any prior knowledge of the classes. In my specific case, this classification scheme only has 3 classes, which makes it less confusing to interpret (fig. 2). It clearly shows the developed areas, the more barren areas (e.g. fields), and the green areas. The resolution isn’t very high but overall this one is fairly reliable I believe.</br></br><b>Supervised pixel-based classification</b></br>The machine's algorithm assigns class labels to each pixel based on training data provided by the user. The resolution appears to be higher for this classification scheme. The fact that it captures slightly more detail than the previous two methods makes it stand out (fig. 3). There are a few issues with incorrect classification of water bodies, but other than that, it appears to be pretty accurate. The developed, barren, and green areas are nicely defined.</br></br><b>Normalized Difference Vegetation Index (NDVI)</b></br>NDVI is a widely used metric in remote sensing to assess the density and health of vegetation. Higher NDVI values generally indicate denser and healthier vegetation, while lower values suggest sparse vegetation. This method might be the most accurate overall, and in my opinion is has worked best with this particular color scheme (fig. 4). The resolution is high and the accuracy is good. I think it is like a combination of the strengths of the supervised pixel-based classification and the unsupervised object-based classification. This one is my personal favorite. While NDVI is designed primarily to measure vegetation health and density instead of urban development, it can be indirectly used to assess urban or highly developed areas, especially in an area that has already been established to be highly urban (such as my ROI).</br></p>
+								<span class="image main"><img src="images/unsupervisedpixel.png" alt="" /></span>
+										<p><i>Fig 1: Unsupervised pixel-based classification. Dark orange colors represent buildings and developed areas, lighter yellow colors represent small fields or less developed areas, light green colors represent open fields and green areas, dark green colors represent larger green areas and parks.</i></br></br></p>
+								<span class="image main"><img src="images/unsupervisedobject.png" alt="" /></span>
+										<p><i>Fig 2: Unsupervised object-based classification. Brown colors represent buildings and developed areas, lighter yellow colors represent fields and less developed areas, and green colors represent green areas and parks.</i></br></br></p>
+								<span class="image main"><img src="images/supervisedpixel.jpeg" alt="" /></span>
+										<p><i>Fig 3: Supervised pixel-based classification.</i></br></br></p>
+								<span class="image main"><img src="images/ndvi.png" alt="" /></span>
+										<p><i>Fig 4: NDVI with color scheme appropriate for vegetation health. Brown colors represent highly developed areas, yellow areas represent less developed (even barren) areas, and green colors represent healthy vegetation.</i></br></br></p>
+								<span class="image main"><img src="images/spectral.png" alt="" /></span>
+										<p><i>Fig 3: Spectral profile.</i></br></br></p>
+						</div>
+					</div>
+
+				<!-- Footer -->
+					<footer id="footer">
+						<div class="inner">
+							
+							<section>
+								<h2>Follow</h2>
+								<ul class="icons">
+									
+									<li><a href="https://github.com/zoekpapadpl" class="icon brands style2 fa-github"><span class="label">GitHub</span></a></li>
+									<li><a href="z.o.z.papadopoulou@students.uu.nl" class="icon solid style2 fa-envelope"><span class="label">Email</span></a></li>
+								</ul>
+							</section>
+							<ul class="copyright">
+								<li>&copy; Zoe Papadopoulou. All rights reserved</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+							</ul>
+						</div>
+					</footer>
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
